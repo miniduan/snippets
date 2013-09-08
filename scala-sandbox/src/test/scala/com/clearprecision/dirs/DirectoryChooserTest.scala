@@ -10,7 +10,7 @@ class DirectoryChooserTest {
   
   @Before
   def setup() = {
-	  TestDataGenerator.createFiles("src/test/resources/testdata")
+	  
   }
   
   @After
