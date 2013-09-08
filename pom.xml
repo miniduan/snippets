@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<scala.version>2.10.1</scala.version>
+		<scala.version>2.10.2</scala.version>
 	</properties>
 
 	<repositories>
@@ -50,6 +50,11 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.10</artifactId>
+			<version>2.2.0-RC2</version>
 		</dependency>
 	</dependencies>
 
@@ -119,6 +124,7 @@
 
 	<modules>
 		<module>scala-sandbox</module>
+		<module>akka-sandbox</module>
 	</modules>
 
 </project>
