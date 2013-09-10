@@ -4,6 +4,13 @@ import akka.actor.ActorSystem
 import akka.actor.ActorContext
 import akka.actor.Props
 import com.clearprecision.akka.messages.Request
+import com.clearprecision.akka.messages.TaskRequest
+import akka.actor.Actor
+import com.clearprecision.akka.messages.Response
+import com.clearprecision.akka.messages.Stop
+import com.clearprecision.akka.messages.Start
+import com.clearprecision.akka.messages.Start
+import com.clearprecision.akka.messages.TaskRequest
 
 /**
  * Hello world!
@@ -11,15 +18,17 @@ import com.clearprecision.akka.messages.Request
  */
 object App extends Application {
 
-  val request = new Request("Hello")
-  
-  val actorSystem = ActorSystem("appSystem")
-  val processor = actorSystem.actorOf(Props[Processor], "processor")
+  val data:List[Int] = List(1,2,3,4,5,6)
+  val request = new TaskRequest(data)
+  val start = new Start
 
-  processor ! request
+  val system = ActorSystem("appActorSystem")
+  val sender = system.actorOf(Props[WorkManager], "sender")  
   
-  processor ! "shutdown"
-  
-  //exit
-
+  var i=0
+  for(i <- 0 until 200) {
+    val calc = i :: data  
+    println("sending request for "+calc)
+    sender ! TaskRequest(calc)
+  }  
 }
