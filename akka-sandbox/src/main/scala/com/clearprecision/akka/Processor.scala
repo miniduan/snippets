@@ -9,10 +9,7 @@ class Processor extends Actor {
     println("Starting processor")
   }
 
-  def receive = {
-    case Start => println("Start")
-    case Stop => context.stop(self)
-
+  def receive = {    
     case TaskRequest(data) => {           
       val result = data.sum
       sender ! Response("Result was " + result)

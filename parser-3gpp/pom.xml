@@ -71,11 +71,9 @@
 				<version>1.5</version>
 				<configuration>
 					<packageName>com.clearprecision.parser.jaxb</packageName>
-					<outputDirectory>target/generated-sources/jaxb</outputDirectory>
-					<schemaDirectory>src/main/resources</schemaDirectory>
-					<schemaFiles>measCollect.xsd</schemaFiles>
+					<outputDirectory>target/generated-sources/jaxb</outputDirectory>					
 				</configuration>
-				
+
 				<executions>
 					<execution>
 						<id>xjc</id>
@@ -84,7 +82,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
 
+
+			<plugin>
+				<groupId>org.scalaxb</groupId>
+				<artifactId>scalaxb-maven-plugin</artifactId>
+				<configuration>
+					<packageName>com.clearprecision.parser.scala</packageName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>scalaxb</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>
