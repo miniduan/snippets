@@ -15,6 +15,10 @@ Sandbox for Scala experiments. Contains the following
 
 Naive implementation of reverse polish notation calculator in Scala, based on the version described in [Learn You Some Erlang for Great Good](http://learnyousomeerlang.com/functionally-solving-problems "Learn You Some Erlang for Great Good ")
 
+##### Heathrow to London
+
+Attempted Scala implementation of the Heathrow to Londown calculation described in [Learn You Some Erlang for Great Good](http://learnyousomeerlang.com/functionally-solving-problems "Learn You Some Erlang for Great Good ")
+
 #### akka-sandbox
 
 Sandbox for Scala-Akka experiments. Contains the following
