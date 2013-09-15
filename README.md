@@ -32,9 +32,9 @@ A scala parser for 3GPP XML format Performance Management (PM) files
 
 Contains the 3GPP schemas and generated Scala classes for parsing.
 
-#### data-generator
+##### data-generator
 
-Random data generator to simulates telecom nodes producing PM data, output written in 3GPP XML format. Basic utility used for testing the parser.
+Random data generator to simulate telecom nodes producing PM data, output written in 3GPP XML format. Basic utility used for testing the parser.
 
 
 
