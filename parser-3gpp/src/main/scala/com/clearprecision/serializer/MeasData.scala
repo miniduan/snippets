@@ -4,11 +4,26 @@ import java.util.Date
 import scala.xml.Attribute
 import scala.xml.Text
 import scala.xml.Null
-import com.clearprecision.serializer.FileFooter
-import com.clearprecision.serializer.FileHeader
-import com.clearprecision.serializer.MetaData
+import scala.collection.mutable.ArrayBuffer
 
 class MeasData(elementType: String, userLabel: String, prefix: String, localDn: String, beginTime: Date, endTime: Date) extends MetaData {
+
+
+  def fromXml(node:scala.xml.Node) = {
+
+    val data = node \ "measData" \ "measInfo" \ "measValue"
+    data.foreach()
+
+    val types = (node \ "measData" \ "measInfo" \ "measTypes").text
+
+
+    val names = for {
+      measurement <- types.split(" ")
+    } yield measurement
+
+
+  }
+
 
   def toXml = {
 

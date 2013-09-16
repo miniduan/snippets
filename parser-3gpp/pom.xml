@@ -11,11 +11,11 @@
 
 	<artifactId>parser-3gpp</artifactId>
 	<dependencies>
-<!--		<dependency>
+		<dependency>
 			<groupId>com.datastax.cassandra</groupId>
 			<artifactId>cassandra-driver-core</artifactId>
 			<version>1.0.3</version>
-		</dependency>-->
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/scala</sourceDirectory>
