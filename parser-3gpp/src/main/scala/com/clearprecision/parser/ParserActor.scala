@@ -8,19 +8,18 @@ import scala.io.Source
 import scala.xml.pull.EvElemStart
 import scala.xml.pull.EvElemEnd
 import scala.xml.pull.EvText
-import org.slf4j.LoggerFactory
+import akka.actor.ActorLogging
 
-class ParserActor extends Actor {
 
-  val logger = LoggerFactory.getLogger("ParserActor");
+class ParserActor extends Actor with ActorLogging {
 
   override def postStop() = {
-    logger.info("postStop called on ParserActor")
+    log.info("postStop called on ParserActor")
   }
 
   def receive: Actor.Receive = {
     case Parse(filePath) => {
-      logger.debug("ParseActor received parse request for "+filePath)
+      log.debug("ParseActor received parse request for "+filePath)
       val parser = new MeasurementParser(filePath)
       val result = parser.parse
       if (result != null) {
@@ -29,7 +28,7 @@ class ParserActor extends Actor {
         sender ! ParseResult("Parsing of file failed", false, filePath, result)
       }
     }
-    case _ => logger.info("Uknown message received by parser actor")
+    case _ => log.info("Uknown message received by parser actor")
   }
 
 }

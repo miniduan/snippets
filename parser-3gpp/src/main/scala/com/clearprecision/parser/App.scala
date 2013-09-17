@@ -19,10 +19,8 @@ import com.clearprecision.parser.messages.Start
 
 object App extends Application {
 
-  val logger = LoggerFactory.getLogger("parser-3gpp");
-
   override def main(args: Array[String]) {
-    logger.info("Starting...")    
+    println("Starting...")
     val system = ActorSystem("3gpp-parser-system")
 
     for (ln <- io.Source.stdin.getLines) {
@@ -30,19 +28,20 @@ object App extends Application {
         case "Start" => {
           val control = system.actorOf(Props[ControlActor], "controller")
           control ! Start
-          start(control)
+          start(control)          
         }
         case "Stop" => {
-          logger.info("Stop message sent")
-          system.actorSelection("akka://parser-3gpp/user/controller") ! Stop
+          println("Stop message sent")
+          system.actorSelection("akka://parser-3gpp/user/controller") ! Stop          
         }
-        case _ => logger.info("Supported commands are Start and Stop"); println(">> ")
+        case _ => println("Supported commands are Start and Stop");
       }
     }
+
   }
 
   def start(control: ActorRef) = {
-    logger.info("Starting to send files to system")
+    println("Starting to send files to system")
     val files = new File("/var/tmp/data").listFiles
     files.foreach(file => control ! ParseRequest(file.getAbsolutePath))
   }

@@ -3,20 +3,19 @@ package com.clearprecision.data
 import akka.actor.Actor
 import com.clearprecision.parser.messages.ParseResult
 import org.slf4j.LoggerFactory
+import akka.actor.ActorLogging
 
-class DataStorageActor extends Actor {
-
-  val logger = LoggerFactory.getLogger("DataStorageActor");
+class DataStorageActor extends Actor with ActorLogging{
 
   def receive = {
     case ParseResult(_, _, _, measurementData) => {
-      logger.debug(measurementData.toString())
+      log.debug(measurementData.toString())
     }
-    case _ => logger.error("Ignoring unkown data received by DataStorageActor")
+    case _ => log.error("Ignoring unkown data received by DataStorageActor")
   }
 
   override def postStop() = {
-    logger.info("postStop called on DataStorageActor")
+    log.info("postStop called on DataStorageActor")
   }
 
 }
