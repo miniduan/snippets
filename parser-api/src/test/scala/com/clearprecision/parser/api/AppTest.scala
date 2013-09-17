@@ -8,7 +8,7 @@ class AppTest {
 
   @Test
   def testLoadXml() = {
-    def measurement = new Meas
+    
 	  
   }
 

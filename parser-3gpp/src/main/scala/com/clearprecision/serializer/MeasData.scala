@@ -12,15 +12,18 @@ class MeasData(elementType: String, userLabel: String, prefix: String, localDn: 
   def fromXml(node:scala.xml.Node) = {
 
     val data = node \ "measData" \ "measInfo" \ "measValue"
-    data.foreach()
+    data.foreach(f => println(f))
+    
 
     val types = (node \ "measData" \ "measInfo" \ "measTypes").text
-
+    println(types)
 
     val names = for {
       measurement <- types.split(" ")
     } yield measurement
 
+    names.foreach(f => println(f))
+    
 
   }
 

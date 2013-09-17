@@ -12,10 +12,12 @@
 	<artifactId>parser-3gpp</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>com.datastax.cassandra</groupId>
-			<artifactId>cassandra-driver-core</artifactId>
-			<version>1.0.3</version>
+			<groupId>com.clearprecision</groupId>
+			<artifactId>parser-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- <dependency> <groupId>com.datastax.cassandra</groupId> <artifactId>cassandra-driver-core</artifactId> 
+			<version>1.0.3</version> </dependency> -->
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/scala</sourceDirectory>
