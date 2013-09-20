@@ -10,7 +10,6 @@ import scala.xml.pull.EvElemEnd
 import scala.xml.pull.EvText
 import akka.actor.ActorLogging
 
-
 class ParserActor extends Actor with ActorLogging {
 
   override def postStop() = {
@@ -19,16 +18,16 @@ class ParserActor extends Actor with ActorLogging {
 
   def receive: Actor.Receive = {
     case Parse(filePath) => {
-      log.debug("ParseActor received parse request for "+filePath)
+      log.debug("ParseActor received parse request for " + filePath)
       val parser = new MeasurementParser(filePath)
       val result = parser.parse
       if (result != null) {
-        sender ! ParseResult("Parsing of file completed", true, filePath, result)
+        sender ! ParseResult("Parsing of file completed", false, filePath, result)
       } else {
-        sender ! ParseResult("Parsing of file failed", false, filePath, result)
+        sender ! ParseResult("Parsing of file failed", true, filePath, result)
       }
     }
-    case _ => log.info("Uknown message received by parser actor")
+    case _ => sender ! ParseResult("Unknown object was received by the parser actor", true, "", null)
   }
 
 }

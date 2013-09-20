@@ -1,10 +1,11 @@
 package com.clearprecision.serializer
 
-import scala.xml.Attribute
-import scala.xml.Text
-import scala.xml.Null
 import java.util.Date
-import com.clearprecision.serializer.MetaData
+
+import scala.xml.Attribute
+import scala.xml.Null
+import scala.xml.Text
+
 
 class FileHeader(prefix: String, localDn: String, elementType: String, beginTime: Date) extends MetaData {
 

@@ -2,7 +2,6 @@ package com.clearprecision.data
 
 import akka.actor.Actor
 import com.clearprecision.parser.messages.ParseResult
-import org.slf4j.LoggerFactory
 import akka.actor.ActorLogging
 
 class DataStorageActor extends Actor with ActorLogging{

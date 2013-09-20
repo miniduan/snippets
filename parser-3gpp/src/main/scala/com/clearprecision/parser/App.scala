@@ -8,7 +8,6 @@ import akka.actor.Props
 import akka.actor.ActorRef
 import akka.routing.RoundRobinRouter
 import com.clearprecision.data.DataStorageActor
-import org.slf4j.LoggerFactory
 import akka.actor.Actor
 import com.clearprecision.parser.messages.ParseResult
 import scala.collection.JavaConversions

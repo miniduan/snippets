@@ -1,10 +1,10 @@
 package com.clearprecision.serializer
 
 import java.util.Date
+
 import scala.xml.Attribute
-import scala.xml.Text
 import scala.xml.Null
-import com.clearprecision.serializer.MetaData
+import scala.xml.Text
 
 class FileFooter(endTime: Date) extends MetaData {
 
