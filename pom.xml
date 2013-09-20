@@ -18,6 +18,13 @@
 			<name>Scala-Tools Maven2 Repository</name>
 			<url>http://scala-tools.org/repo-releases</url>
 		</repository>
+
+		<repository>
+			<id>Sonatype</id>
+			<name>Sonatype Repository</name>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</repository>
+
 	</repositories>
 
 	<pluginRepositories>
@@ -95,9 +102,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.scalatest</groupId>
-			<artifactId>scalatest_2.10</artifactId>			
+			<artifactId>scalatest_2.10</artifactId>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>

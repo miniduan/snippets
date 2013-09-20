@@ -12,35 +12,27 @@
 	<artifactId>data-generator</artifactId>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-library</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-actor_2.10</artifactId>
-			<version>2.2.0-RC2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>com.clearprecision</groupId>
 			<artifactId>parser-3gpp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
-		
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/scala</sourceDirectory>
-		<testSourceDirectory>src/test/scala</testSourceDirectory>
+		<testSourceDirectory>src/test/scala</testSourceDirectory>		
 	</build>
 
 </project>
