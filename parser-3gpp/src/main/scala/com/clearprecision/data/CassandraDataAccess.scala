@@ -3,19 +3,20 @@ package com.clearprecision.data
 import com.datastax.driver.core.Cluster
 import scala.collection.JavaConversions._
 import com.datastax.driver.core.Session
-import com.clearprecision.serializer.Measurement
-import com.clearprecision.serializer.MeasData
+import com.clearprecision.parser.jaxb._
 
 class CassandraDataAccess(node: String) extends DataOperations {
 
-  def save(data: MeasData) = {
+  def save(data: MeasCollecFile) = {
     val session = CassandraDataAccess.connect(node)
-    data.
-    session.prepare("insert into measurement_data() values()")
+
+    session.execute(" insert into measdata (id, vendorName, dnPrefix) values (now(), '"
+      + data.getFileHeader.getVendorName + "', '" + data.getFileHeader.getDnPrefix + "');")
+      
     CassandraDataAccess.close(session);
   }
 
-  def load(data: MeasData) = {
+  def load(data: MeasCollecFile) = {
 
   }
 

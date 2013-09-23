@@ -1,11 +1,10 @@
 package com.clearprecision.data
-
-import com.clearprecision.serializer.MeasData
+import com.clearprecision.parser.jaxb._
 
 trait DataOperations {
   
-  def save(data:MeasData)
+  def save(data:MeasCollecFile)
   
-  def load(data:MeasData)
+  def load(data:MeasCollecFile)
 
 }

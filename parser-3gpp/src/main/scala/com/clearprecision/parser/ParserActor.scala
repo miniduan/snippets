@@ -20,11 +20,16 @@ class ParserActor extends Actor with ActorLogging {
     case Parse(filePath) => {
       log.debug("ParseActor received parse request for " + filePath)
       val parser = new MeasurementParser(filePath)
-      val result = parser.parse
-      if (result != null) {
-        sender ! ParseResult("Parsing of file completed", false, filePath, result)
-      } else {
-        sender ! ParseResult("Parsing of file failed", true, filePath, result)
+      try {
+        val result = parser.parse
+        if (result != null) {
+          sender ! ParseResult("Parsing of file completed", false, filePath, result)
+        } else {
+          sender ! ParseResult("Parsing of file failed", true, filePath, result)
+        }
+      }
+      catch {
+        case e:Exception => e.printStackTrace()
       }
     }
     case _ => sender ! ParseResult("Unknown object was received by the parser actor", true, "", null)
