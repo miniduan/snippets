@@ -10,7 +10,7 @@ class CassandraDataAccess(node: String) extends DataOperations {
   def save(data: MeasCollecFile) = {
     val session = CassandraDataAccess.connect(node)
 
-    session.execute(" insert into measdata (id, vendorName, dnPrefix) values (now(), '"
+    session.execute(" insert into schema1.measdata (id, vendorName, dnPrefix) values (now(), '"
       + data.getFileHeader.getVendorName + "', '" + data.getFileHeader.getDnPrefix + "');")
       
     CassandraDataAccess.close(session);

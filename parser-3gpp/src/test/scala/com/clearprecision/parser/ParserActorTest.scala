@@ -26,7 +26,8 @@ class ParserActorTest extends TestKit(ActorSystem("testActorSystem")) with Impli
       val actorRef = TestActorRef[ParserActor]
       val testRequest = new Parse("src/test/resources/test-pm-file-1-3gpp.xml")
       actorRef ! testRequest
-      expectMsgClass(classOf[ParseResult])
+      val res = expectMsgClass(classOf[ParseResult])
+      println(res.parsedObject)
     }
   }
 

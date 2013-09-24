@@ -39,12 +39,12 @@ class ControlActor extends Actor with ActorLogging {
       context.actorSelection(parserRouter) ! Parse(file)
     }
 
-    case ParseResult(message, true, filePath, measurementData) => {
+    case ParseResult(message, false, filePath, measurementData) => {
       log.debug("Control received succesful parse result for "+filePath)
       context.actorSelection(dataRouter) ! ParseResult(message, true, filePath, measurementData)
     }
 
-    case ParseResult(message, false, filePath, _) => {
+    case ParseResult(message, true, filePath, _) => {
       log.error("Error parsing file " + filePath)
     }
 
