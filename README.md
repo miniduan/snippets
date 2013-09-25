@@ -5,7 +5,7 @@ Snippets
 
 I can haz cultural learnings in Scala for glorious benefit. Messing around with Scala in other words.
 
-###Contents: 
+### Contents: 
 
 #### Scala-sandbox
 
@@ -19,9 +19,13 @@ Naive implementation of reverse polish notation calculator in Scala, based on th
 
 Attempted Scala implementation of the Heathrow to Londown calculation described in [Learn You Some Erlang for Great Good](http://learnyousomeerlang.com/functionally-solving-problems "Learn You Some Erlang for Great Good ")
 
+##### Scala Cake Pattern Dependency Injection
+
+Dependency injection sandbox. Uses the cake pattern and structural typing to do the injection.
+
 #### akka-sandbox
 
-Sandbox for Scala-Akka experiments. Contains the following
+Sandbox for Scala-Akka experiments. Nothing wild or wonderful.
 
 
 #### 3GPP Parser and Simulator
@@ -30,7 +34,7 @@ A scala parser for 3GPP XML format Performance Management (PM) files
 
 ##### parser-api
 
-Contains the 3GPP schemas and generated Scala classes for parsing.
+Contains the 3GPP schemas and JAXB parsing implementation.
 
 ##### data-generator
 
