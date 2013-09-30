@@ -5,9 +5,14 @@ import com.clearprecision.parser.messages.ParseResult
 import akka.actor.ActorLogging
 import scala.collection.JavaConversions._
 
+/**
+ *
+ * DataStorageActors are responsible for processing the results from the parser 
+ * actors and assembling inserting the parsed data into the data store.
+ */
 class DataStorageActor extends Actor with ActorLogging {
-  
-  val dataMgr = new CassandraDataAccess("localhost")
+
+  val dataMgr = new CassandraDataManager("localhost")
 
   def receive = {
     case ParseResult(_, _, _, measurementData) => {
