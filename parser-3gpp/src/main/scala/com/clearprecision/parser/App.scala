@@ -19,7 +19,7 @@ import com.clearprecision.parser.messages.Start
 object App extends Application {
 
   override def main(args: Array[String]) {
-    println("Starting...")
+    println("Commands: \n Start - start parser \n Stop - stop parsing \n Logs are availabe in /var/log/parser.log \n --------- ")
     val system = ActorSystem("3gpp-parser-system")
 
     for (ln <- io.Source.stdin.getLines) {
@@ -27,11 +27,11 @@ object App extends Application {
         case "Start" => {
           val control = system.actorOf(Props[ControlActor], "controller")
           control ! Start
-          start(control)          
+          start(control)
         }
         case "Stop" => {
           println("Stop message sent")
-          system.actorSelection("akka://parser-3gpp/user/controller") ! Stop          
+          system.actorSelection("akka://parser-3gpp/user/controller") ! Stop
         }
         case _ => println("Supported commands are Start and Stop");
       }
