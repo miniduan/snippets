@@ -1,5 +1,12 @@
 package com.clearprecision.dsl
 
-class DslBuilder {
+object DslBuilder extends App {
 
+  val clazz = classOf[String]
+  
+  val ear:Ear = Ear.apply(Set())
+  ear + "Hello"
+  
+  ear.content.foreach(elem => println(elem))
+    
 }
