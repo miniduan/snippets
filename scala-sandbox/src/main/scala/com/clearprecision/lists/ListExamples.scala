@@ -4,7 +4,7 @@ object ListExamples extends App {
 
   val intList = List(1, 2, 3, 4, 5)
   
-  val ints = for (i <-1 to 1000) yield i
+  val ints = for (i <-1 to 900000) yield i
   
 
   def listComprehension() = {
@@ -24,11 +24,11 @@ object ListExamples extends App {
     
   }
 
-  print(listComprehension)
+  println(listComprehension)
   
   val res = paralellList
-  print("Single threaded operation took "+res._1)
-  print("Multi threaded threaded operation took "+res._2)
+  println("Single threaded operation took "+res._1)
+  println("Multi threaded threaded operation took "+res._2)
   
 
 }
