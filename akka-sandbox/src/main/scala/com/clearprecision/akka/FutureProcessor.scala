@@ -14,9 +14,12 @@ class FutureProcessor extends Application {
   val compositeList = List(data, factors)
   
   val future = Future {    
-    val result = compositeList.foreach(list => println(list.sum))        
+    val result = compositeList.foreach(list => println(list.sum))
+    
+    
   }
   
-  future foreach println    
+  
+  future    
 
 }
