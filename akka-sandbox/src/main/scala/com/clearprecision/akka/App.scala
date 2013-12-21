@@ -12,6 +12,7 @@ import com.clearprecision.akka.messages.Start
 import com.clearprecision.akka.messages.Start
 import com.clearprecision.akka.messages.TaskRequest
 
+
 /**
  * Hello world!
  *
@@ -30,5 +31,7 @@ object App extends Application {
     val calc = i :: data  
     println("sending request for "+calc)
     sender ! TaskRequest(calc)
-  }  
+  }
+  
+  
 }
