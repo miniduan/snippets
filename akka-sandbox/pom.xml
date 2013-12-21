@@ -16,13 +16,18 @@
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-cluster_2.10</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
